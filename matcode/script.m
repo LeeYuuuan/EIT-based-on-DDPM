@@ -1,0 +1,1 @@
+generatedata('D:\EITMat\eidors-v3.10\eidors', 'D:\EITMat\Data', 0.15, 0.70, 0, 0.1, 0.02, 1);

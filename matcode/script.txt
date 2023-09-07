@@ -1,0 +1,22 @@
+imdl = mk_common_model('c2c2',16);
+img = mk_image(imdl, 0.15)
+
+
+select_fcn = inline('(x-0.2).^2+(y-0.5).^2<0.3^2','x','y','z');
+elem_select = elem_select(img.fwd_model, select_fcn);
+img1.elem_data = img1.elem_data + elem_select;
+
+
+target= mk_c2f_circ_mapping(img.fwd_model, [0.5;0.0;0.1]);
+img.elem_data = img.elem_data + target(:);
+
+
+函数一般调用方法
+generatedata('D:\Development\EIDORS3.10\eidors', 'F:\BME\Education\2020下《毕业设计》\03程序代码', 0.15, 0.70, 0, 0.1, 0.02, 1);
+
+generatedata('D:\Development\EIDORSv3.10\eidors', 'E:\BME\Education\2020下《毕业设计》\03程序代码', 0.15, 0.70, 0, 0.1, 0.02, 1);
+
+data01.xlsx gap = 0.1
+data02.xlsx gap = 0.05
+data03.xlsx gap = 0.02
+data04.xlsx gap = 0.01
